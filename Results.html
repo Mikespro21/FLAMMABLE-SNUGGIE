@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Results - FLAMMABLE SNUGGIE</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .chart-bar {
+            position: relative;
+            width: 60px;
+            margin: 0 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .chart-bar:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 12px #ffd7007a;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2a4590;
+            color: #ffd700;
+            padding: 0.7em 1em;
+            font-size: 0.95em;
+            border-radius: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px #0002;
+            z-index: 10;
+        }
+        .chart-bar:hover .tooltip {
+            display: block;
+        }
+        .material-icon {
+            font-size: 1.6em;
+            display: block;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">FLAMMABLE SNUGGIE</div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="experiment.html" class="nav-link">Experiment</a>
+            <a href="results.html" class="nav-link active">Results</a>
+            <a href="conclusion.html" class="nav-link">Conclusion</a>
+        </div>
+    </nav>
+    <main class="main-content fade-in">
+        <section class="hero">
+            <h1>Experiment Results</h1>
+            <div style="display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;">
+                <div style="flex:1;min-width:280px;">
+                    <h2>Material Insulation Test</h2>
+                    <p>
+                        Each material was tested for its ability to keep 50ml of water warm for 10 minutes, over three trials. See how their insulation performance compares!
+                    </p>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Avg Initial (°C)</th>
+                                <th>Avg Final (°C)</th>
+                                <th>Avg Change (°C)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Plastic</td><td>78.33</td><td>54.00</td><td>24.67</td></tr>
+                            <tr><td>Cardboard</td><td>78.33</td><td>54.33</td><td>24.33</td></tr>
+                            <tr><td>Foil</td><td>79.00</td><td>53.67</td><td>25.67</td></tr>
+                            <tr><td>Paper</td><td>80.00</td><td>54.33</td><td>25.33</td></tr>
+                            <tr><td>Cotton</td><td>78.67</td><td>54.33</td><td>24.67</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="flex:1;min-width:280px;">
+                    <h2>Snuggie & Cup Comparison</h2>
+                    <p>
+                        How do everyday cups compare to our Snuggie? Lower temperature change means better insulation!
+                    </p>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Avg Initial (°C)</th>
+                                <th>Avg Final (°C)</th>
+                                <th>Avg Change (°C)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Paper Cup</td><td>74.67</td><td>54.33</td><td>20.33</td></tr>
+                            <tr><td>Foam Cup</td><td>74.33</td><td>51.33</td><td>23.00</td></tr>
+                            <tr><td>Snuggie (All Layers)</td><td>70.00</td><td>52.67</td><td>17.33</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h2 style="margin-top:2rem;">Chart: Average Temperature Change</h2>
+            <div style="display:flex;justify-content:center;align-items:flex-end;height:220px;gap:24px;margin:2rem 0;">
+                <div class="chart-bar" style="height:97px;background:#ffd700;">
+                    <span class="material-icon"></span>
+                    <span style="writing-mode:vertical-lr;font-size:0.9rem;">Plastic<br>24.7°C</span>
+                    <span class="tooltip">Plastic cup: Lightweight insulator, moderate heat loss.</span>
+                </div>
+                <div class="chart-bar" style="height:96px;background:#ffba00;">
+                    <span class="material-icon"></span>
+                    <span style="writing-mode:vertical-lr;font-size:0.9rem;">Cardboard<br>24.3°C</span>
+                    <span class="tooltip">Cardboard: Sturdy, traps some air, moderate insulation.</span>
+                </div>
+                <div class="chart-bar" style="height:102px;background:#ffa500;">
+                    <span class="material-icon"></span>
+                    <span style="writing-mode:vertical-lr;font-size:0.9rem;">Foil<br>25.7°C</span>
+                    <span class="tooltip">Foil: Reflects heat, but conducts quickly. Highest loss.</span>
+                </div>
+                <div class="chart-bar" style="height:101px;background:#ff9100;">
+                    <span style="writing-mode:vertical-lr;font-size:0.9rem;">Paper<br>25.3°C</span>
+                    <span class="tooltip">Paper: Thin, basic insulation, quick heat loss.</span>
+                </div>
+                <div class="chart-bar" style="height:97px;background:#ff7f50;">
+                    <span class="material-icon"></span>
+                    <span style="writing-mode:vertical-lr;font-size:0.9rem;">Cotton<br>24.7°C</span>
+                    <span class="tooltip">Cotton: Soft, natural fiber, traps air for insulation.</span>
+                </div>
+                <div class="chart-bar" style="height:68px;background:#2a4590;">
+                    <span class="material-icon" style="color:#ffd700;">🔥</span>
+                    <span style="writing-mode:vertical-lr;color:#ffd700;font-size:0.9rem;">Snuggie<br>17.3°C</span>
+                    <span class="tooltip">Snuggie: Most layers combined. Best insulation, lowest heat loss!</span>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">The Snuggie outperformed all other materials and cups, keeping drinks hottest!</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <span>@BUY NOW! LIMITED EDITION</span>
+    </footer>
+    <script>
+        document.body.classList.add('fade-in');
+    </script>
+</body>
+</html>

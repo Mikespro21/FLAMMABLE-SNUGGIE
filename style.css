@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #d6e3f3 100%);
+    color: #212121;
+    transition: background 0.8s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a4590;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(40,60,130,0.08);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: color 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #d1e0ff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+    padding-bottom: 3px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #ffd700;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #ffd700;
+    width: 100%;
+    border-radius: 1px;
+    transition: width 0.3s;
+}
+
+.main-content {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeIn 1s;
+}
+
+.hero {
+    background: rgba(255,255,255,0.8);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(42,69,144,0.08);
+    max-width: 580px;
+    text-align: center;
+    margin-top: 2rem;
+    animation: popIn 1s;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #2a4590;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #212121;
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg,#ffd700 60%,#ff9100 100%);
+    color: #2a4590;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(255,170,0,0.14);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.4s, color 0.4s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background: linear-gradient(90deg,#ffd700 40%,#ff9100 100%);
+    color: #fff;
+    transform: scale(1.07);
+}
+
+.footer {
+    text-align: center;
+    padding: 1.2rem 0;
+    background: #2a4590;
+    color: #ffd700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(40,60,130,0.06);
+    transition: background 0.5s;
+    position: sticky;
+}
+
+.fade-in {
+    animation: fadeIn 0.9s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.85);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        padding: 1rem;
+    }
+    .hero {
+        padding: 1.2rem 0.5rem;
+        max-width: 98vw;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        gap: 1.2rem;
+    }
+}
